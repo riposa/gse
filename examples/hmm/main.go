@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 
-	"github.com/go-ego/gse"
+	"github.com/riposa/gse"
 )
 
 var seg gse.Segmenter

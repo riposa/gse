@@ -48,8 +48,8 @@ func (dict *Dictionary) TotalFrequency() int64 {
 	return dict.totalFrequency
 }
 
-// addToken 向词典中加入一个分词
-func (dict *Dictionary) addToken(token Token) {
+// AddToken 向词典中加入一个分词
+func (dict *Dictionary) AddToken(token Token) {
 	bytes := textSliceToBytes(token.text)
 	_, err := dict.trie.Get(bytes)
 	if err == nil {
@@ -64,9 +64,9 @@ func (dict *Dictionary) addToken(token Token) {
 	}
 }
 
-// lookupTokens 在词典中查找和字元组 words 可以前缀匹配的所有分词
+// LookupTokens 在词典中查找和字元组 words 可以前缀匹配的所有分词
 // 返回值为找到的分词数
-func (dict *Dictionary) lookupTokens(words []Text,
+func (dict *Dictionary) LookupTokens(words []Text,
 	tokens []*Token) (numOfTokens int) {
 	var (
 		id, value int

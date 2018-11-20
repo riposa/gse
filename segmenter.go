@@ -26,7 +26,7 @@ import (
 	"unicode"
 	"unicode/utf8"
 
-	"github.com/go-ego/gse/hmm"
+	"github.com/riposa/gse/hmm"
 )
 
 const (
@@ -204,7 +204,7 @@ func (seg *Segmenter) segmentWords(text []Text, searchMode bool) []Segment {
 		}
 
 		// 寻找所有以当前字元开头的分词
-		numTokens := seg.dict.lookupTokens(
+		numTokens := seg.dict.LookupTokens(
 			text[current:minInt(current+seg.dict.maxTokenLen, len(text))], tokens)
 
 		// 对所有可能的分词，更新分词结束字元处的跳转信息

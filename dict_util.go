@@ -90,7 +90,7 @@ func (seg *Segmenter) Read(file string) error {
 		// 将分词添加到字典中
 		words := splitTextToWords([]byte(text))
 		token := Token{text: words, frequency: frequency, pos: pos}
-		seg.dict.addToken(token)
+		seg.dict.AddToken(token)
 	}
 
 	return nil
