@@ -21,7 +21,7 @@ package gse Go efficient text segmentation, Go 语言高性能分词
 package gse
 
 import (
-	"log"
+	"git.henghajiang.com/backend/golang_utils/log"
 	"path"
 	"unicode"
 	"unicode/utf8"
@@ -33,6 +33,10 @@ const (
 	version string = "v0.20.0.147, Lethe River!"
 
 	minTokenFrequency = 2 // 仅从字典文件中读取大于等于此频率的分词
+)
+
+var (
+	logger = log.New()
 )
 
 // GetVersion get the gse version
@@ -118,7 +122,6 @@ func (seg *Segmenter) LoadDict(files ...string) error {
 	// }
 
 	seg.SegToken()
-	log.Println("Gse dictionary loaded finished.")
 
 	return nil
 }
